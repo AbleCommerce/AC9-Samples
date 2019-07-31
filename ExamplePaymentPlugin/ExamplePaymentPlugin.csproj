@@ -61,14 +61,11 @@
       <HintPath>..\packages\Castle.Windsor.4.0.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CommerceBuilder, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lib\CommerceBuilder.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="CommerceBuilder">
+      <HintPath>..\Lib\CommerceBuilder.dll</HintPath>
     </Reference>
-    <Reference Include="CommerceBuilder.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lib\CommerceBuilder.Web.dll</HintPath>
+    <Reference Include="CommerceBuilder.Web">
+      <HintPath>..\Lib\CommerceBuilder.Web.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
