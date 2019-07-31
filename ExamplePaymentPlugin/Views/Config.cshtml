@@ -1,0 +1,111 @@
+﻿@model ConfigModel
+@{
+    ViewBag.PageCaption = "Example Payment Plugin";
+    ViewBag.Title = "Example Payment Plugin";
+}
+
+@using (Ajax.BeginForm("Config", "EPPAdmin", new AjaxOptions() { OnSuccess = "GatewayAdded" }))
+{
+    @Html.HiddenFor(m =>m.GatewayId)
+    @Html.HiddenFor(m => m.SaveOnly)
+    <div class="wrapper wrapper-content">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>@(Model.GatewayId.HasValue ? "Configure Example Payment Provider" : "Add Example Payment Provider")</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="content">
+                    <div class="well">
+                        <p>This is not a real payment gateway. Only use the AbleCommerce gateway for testing purposes.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 b-r">
+                            <div class="form-group">
+                                <label data-content="The integration assembly name and version." class="tooltip-label">Assembly:</label>
+                                <span>@Html.Raw(Model.AssemblyInfo)</span>
+                            </div>
+                            <div class="form-group">
+                                <label data-content="Use this setting to force a successful or failed transaction test." class="tooltip-label">Execution Mode</label>
+                                @Html.DropDownListFor(m => m.ExecutionMode, Model.ExecutionModes, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group" id="Config_UseAuthCapture">
+                                <label data-content="Use 'Authorize' to request authorization without capturing funds at the time of purchase. You can capture authorized transactions through the order admin interface. Use 'Sale' to capture funds immediately at the time of purchase." class="tooltip-label">Authorization Mode</label>
+                                <div class="radio radio-success">
+                                    @Html.RadioButtonFor(m => m.UseAuthCapture, false)
+                                    <label for="Config_UseAuthCapture_0">Authorize (recommended)</label>
+                                </div>
+                                <div class="radio radio-success">
+                                    @Html.RadioButtonFor(m => m.UseAuthCapture, true)
+                                    <label for="Config_UseAuthCapture_1">Authorize &amp; Capture</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (Model.PaymentMethods.Count > 0)
+                    {
+                        <div class="hr-line-dashed"></div>
+                        <label data-content="Select all the payment methods that apply to this payment service." class="tooltip-label">Payment Methods</label>
+                        foreach (var method in Model.PaymentMethods)
+                        {
+                            <div class="checkbox checkbox-success">
+                                @Html.CheckBox("METHOD_CHK_" + method.Id, method.IsSelected)
+                                <label for="METHOD_CHK_"@method.Id>
+                                    @method.Name
+                                </label>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <br /><br /><br />
+    <div class="sticky-footer">
+        <div class="pull-left">
+            <a href="@Url.Action("Gateways", "Payments")" class="btn btn-default">Cancel</a>
+        </div>
+        <div class="pull-right">
+            @{ var btnText = Model.GatewayId == null || Model.GatewayId == 0 ? "Save and Edit" : "Save"; }
+            <button type="submit" id="save" class="btn btn-primary">@btnText</button>
+            <button type="submit" id="saveAndClose" class="btn btn-primary">Save and Close</button>
+        </div>
+    </div>
+
+                }
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#save').click(function () {
+                $('#SaveOnly').val("true");
+            });
+
+            $('#saveAndClose').click(function () {
+                $('#SaveOnly').val("false");
+            });
+        });
+
+        function GatewayAdded(data)
+        {
+            if(data.status == "Redirect")
+            {
+                window.location = data.Url;
+            }
+            else if (data.status == "Success")
+            {
+                $('#Id').val(data.Id);
+                if (data.showMessage)
+                {
+                    toastr.success("Gateway updated successfully", "Success");
+                }
+                else
+                {
+                    window.location.href = "@Url.Action("Config")" + "?id=" + data.Id;
+                }
+            }
+        }
+    </script>
+}

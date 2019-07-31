@@ -1,0 +1,7 @@
+﻿@model ExamplePaymentButtonModel
+@{ 
+    // USE ORDER INFORMATION TO BUILD THE BUTTON AS PER PROVIDER DOCUMENTATION
+    int orderId = Model.OrderId;
+    decimal amount = Model.Amount;
+}
+<input name="ExamplePaymentButton" type="image" src="@Url.Content("~/Plugins/ExamplePaymentPlugin/Content/paynow.png")" alt="Pay Now" />
