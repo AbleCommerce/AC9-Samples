@@ -1,7 +1,7 @@
 # AC9-Samples
 This repository provides source code for sample plugins for AbleCommerce shopping cart software
 
-# How to build
+## How to build the sample project
 
 Git clone or download and unzip the source code. This solution was created with *Visual Studio 2015* so you will be needing the same version of higher to build the sample codes. In order to compile and build install artifacts you will have to follow the following steps.
 
