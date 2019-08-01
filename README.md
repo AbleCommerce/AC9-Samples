@@ -12,3 +12,6 @@ Git clone or download and unzip the source code. This solution was created with 
 * Build a sample plugin project in Visual Studio for example try to build **ExamplePaymentPlugin** project. Once build successfully completes it will create a folder named **Build** within project folder with installer zip file. In this case it will be **ExamplePaymentPlugin.zip**
 
 * Copy **ExamplePaymentPlugin.zip** to your **Website/Plugins** folder, login into administration panel and go to **Plugins** area. Your newly added **ExamplePaymentPlugin** will be listed in there ready to install.
+
+## License
+This project is licensed under the terms of the **MIT license**.
