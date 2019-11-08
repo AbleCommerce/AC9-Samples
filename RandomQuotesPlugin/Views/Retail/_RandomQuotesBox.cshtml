@@ -1,0 +1,22 @@
+﻿@model QuoteModel
+
+@if (Model != null)
+{
+    <aside class="sidebar">
+        <div class="widget cms-widget widget-popular-products">
+            <h3><a role="button" data-toggle="collapse" href="#widget-random-quote-box-collapse" aria-expanded="true" aria-controls="widget-random-quote-box-collapse">@ViewBag.Caption</a></h3>
+            <div class="collapse in" id="widget-random-quote-box-collapse" aria-expanded="true" role="tabpanel">
+                <div class="widget-body">
+                    <p>
+                        @Model.Content
+                    </p>
+                    <span>@Model.Author</span>
+                    @if (ViewBag.ShowWebsiteLink)
+                {
+                        <a href="@Model.Website"><i class="fa fa-globe"></i></a>
+                    }
+                </div>
+            </div>
+        </div>
+    </aside>
+}

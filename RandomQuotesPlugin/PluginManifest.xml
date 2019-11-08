@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PluginManifest>
+  <Name>RandomQuotesPlugin</Name>
+  <Title>Random Quotes</Title>
+  <LogoUrl>~/Plugins/RandomQuotesPlugin/Content/Logo.png</LogoUrl>
+  <ConfigUrl>~/Admin/RandomQuotes</ConfigUrl>
+  <Description>RandomQuotesPlugin provides an example plugin to demonstrate creating custom tables, nhibernate mappings and repositories registration.</Description>
+  <Author>AbleCommerce</Author>
+  <Version>1.0.0</Version>
+  <SupportedVersion>9.0.0</SupportedVersion>
+  <PluginCategory>General</PluginCategory>
+  <PluginTypeName>RandomQuotesPlugin.RQPlugin</PluginTypeName>
+  <PluginAssemblyName>RandomQuotesPlugin</PluginAssemblyName>
+  <ShowInAdminMenu>true</ShowInAdminMenu>
+</PluginManifest>

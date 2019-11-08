@@ -1,0 +1,60 @@
+﻿@model IList<QuoteModel>
+@{
+    ViewBag.PageCaption = "Random Quotes";
+    ViewBag.Title = "Random Quotes";
+}
+
+@section TitleActions {
+
+    <a class="btn btn-primary" href="@Url.Action("AddEditQuote", "RQPAdmin")">Add</a>
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>List of Quotes</h5>
+        </div>
+        <div class="ibox-content">
+            @if (Model.Count > 0)
+            {
+                <table class="table table-stripped footable">
+                    <thead>
+                        <tr>
+                            <th>Author</th>
+                            <th>Content</th>
+                            <th>Created At</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (QuoteModel quote in Model)
+                        {
+                            <tr>
+                                <td>@quote.Author</td>
+                                <td>@quote.Content</td>
+                                <td>@quote.CreatedDate.ToShortDateString()</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "AddEditQuote", "RQPAdmin", new { QuoteId = quote.Id }, new { @class = "btn btn-sm btn-white" })
+                                    @Ajax.ActionLink("Delete", "DeleteQuote", "RQPAdmin", new { QuoteId = quote.Id }, new AjaxOptions() { HttpMethod = "POST", OnSuccess = "onDeleted" }, new { @class = "btn-white btn btn-sm btn-delete" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            }
+            else
+            {
+                <h4 class="no-results">There are no quotes to display.</h4>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        function onDeleted() {
+            window.location.reload();
+        }
+    </script>    
+}
