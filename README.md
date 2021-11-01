@@ -3,7 +3,7 @@ This repository provides source code for sample plugins for AbleCommerce shoppin
 
 ## How to build the sample project
 
-Git clone or download and unzip the source code. This solution was created with **Visual Studio 2015** so you will be needing the same version of higher to build the sample codes. In order to compile and build install artifacts you will have to follow the following steps.
+Git clone or download and unzip the source code. This solution was created with **Visual Studio 2015** so you will be needing the same version or higher to build the sample codes. In order to compile and build install artifacts you will have to follow the following steps.
 
 * Open the *AC9-Samples.sln* solution file in Visual Studio, **Right Click** on **solution name** in **Solution Explorer** and then choose **Restore NuGet Packages** command. This should restore most of the dependencies needed by these sample projects.
 
