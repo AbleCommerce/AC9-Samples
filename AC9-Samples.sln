@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamplePaymentPlugin", "ExamplePaymentPlugin\ExamplePaymentPlugin.csproj", "{0C8AEDB9-5D25-443A-98D8-3C7659F070E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomQuotesPlugin", "RandomQuotesPlugin\RandomQuotesPlugin.csproj", "{ACFC45B4-A25F-49F8-979C-8032AA3603A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{0C8AEDB9-5D25-443A-98D8-3C7659F070E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C8AEDB9-5D25-443A-98D8-3C7659F070E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C8AEDB9-5D25-443A-98D8-3C7659F070E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFC45B4-A25F-49F8-979C-8032AA3603A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFC45B4-A25F-49F8-979C-8032AA3603A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFC45B4-A25F-49F8-979C-8032AA3603A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFC45B4-A25F-49F8-979C-8032AA3603A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CFE45D9-FBF7-4BF6-97FC-351C928D9F43}
 	EndGlobalSection
 EndGlobal

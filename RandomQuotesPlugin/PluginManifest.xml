@@ -7,7 +7,7 @@
   <Description>RandomQuotesPlugin provides an example plugin to demonstrate creating custom tables, nhibernate mappings and repositories registration.</Description>
   <Author>AbleCommerce</Author>
   <Version>1.0.0</Version>
-  <SupportedVersion>9.0.0</SupportedVersion>
+  <SupportedVersion>9.0.6</SupportedVersion>
   <PluginCategory>General</PluginCategory>
   <PluginTypeName>RandomQuotesPlugin.RQPlugin</PluginTypeName>
   <PluginAssemblyName>RandomQuotesPlugin</PluginAssemblyName>

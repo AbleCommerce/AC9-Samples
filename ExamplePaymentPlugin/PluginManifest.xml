@@ -7,7 +7,7 @@
   <Description>ExamplePaymentPlugin provides an example payment gateway for testing purposes only. Includes options to purposefully fail or authorize payments.</Description>
   <Author>AbleCommerce</Author>
   <Version>1.0.0</Version>
-  <SupportedVersion>9.0.0</SupportedVersion>
+  <SupportedVersion>9.0.6</SupportedVersion>
   <PluginCategory>Payment</PluginCategory>
   <PluginTypeName>ExamplePaymentPlugin.EPPlugin</PluginTypeName>
   <PluginAssemblyName>ExamplePaymentPlugin</PluginAssemblyName>
